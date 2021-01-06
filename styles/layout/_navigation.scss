@@ -6,9 +6,21 @@
     align-items: center;
     justify-content: space-between;
 
+    @include media('<=750px') {
+        padding: 2rem 0;
+    }
+
     &__logo {
         font-size: 1.2rem;
         text-transform: uppercase;
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        column-gap: 0.8rem;
+
+        > div {
+            width: 25px;
+        }
     }
 
     &__links {
