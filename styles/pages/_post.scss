@@ -1,0 +1,96 @@
+.post {
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative;
+
+    &__container {
+        margin: 1.5rem auto 0;
+        max-width: 750px;
+        display: grid;
+        row-gap: 0.5rem;
+    }
+
+    &__back {
+        z-index: 1;
+
+        &-cover {
+            position: absolute;
+            top: 1rem;
+            left: 0;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            color: $white-color;
+            background-color: rgba($color: $gray-color, $alpha: 0.2);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+
+            @include media('<=750px') {
+                font-size: 1rem;
+            }
+
+            @include media('<=500px') {
+                font-size: 0.8rem;
+            }
+
+            > div {
+                margin-right: 0.5rem;
+                width: 15px;
+            }
+        }
+
+        &:hover {
+            button {
+                background-color: rgba($color: $accent-color, $alpha: 0.7);
+            }
+        }
+    }
+
+    > div:not(.post__container) {
+        width: calc(100% + 2rem) !important;
+        transform: translateX(-1rem);
+    }
+
+    &__title,
+    &__date,
+    &__author {
+        margin: 0;
+    }
+
+    &__date,
+    &__author {
+        font-size: 0.9rem;
+    }
+
+    &__title {
+        color: $black-color;
+    }
+
+    main {
+        margin-top: 1rem;
+        color: $gray-color;
+        overflow: hidden;
+
+        > * {
+            padding: 0;
+        }
+    }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+    .post {
+        &__back {
+            button {
+                background-color: rgba($color: $gray-color, $alpha: 0.4);
+            }
+        }
+    }
+}
