@@ -11,6 +11,10 @@
 
 /* layout */
 @import './layout/navigation';
+@import './layout/about-me';
+@import './layout/post-list-item';
 
 /* components */
 /* pages */
+@import './pages/home';
+@import './pages/post';
