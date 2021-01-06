@@ -1,10 +1,20 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Navigation = () => {
     return (
         <header className="navigation">
             <Link href="/">
-                <a className="navigation__logo">Codax</a>
+                <a className="navigation__logo">
+                    <Image
+                        src="/assets/logo.png"
+                        alt="logo"
+                        height={'100%'}
+                        width={'100%'}
+                        layout="responsive"
+                    />{' '}
+                    Codax
+                </a>
             </Link>
             <ul className="navigation__links">
                 <li>
