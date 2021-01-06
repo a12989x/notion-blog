@@ -1,0 +1,33 @@
+.postListItem {
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+    background-color: lighten($color: $gray-color, $amount: 40);
+    border: 1px solid $gray-color;
+    border-radius: 0.5rem;
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 0.5rem;
+    color: $black-color;
+    transition: 0.4s ease-in-out;
+
+    &__description {
+        margin: 0;
+        color: $black-color;
+        font-size: 1rem;
+    }
+
+    &__date {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        color: $gray-color;
+    }
+
+    &:first-child {
+        grid-column: 1 / -1;
+    }
+
+    &:hover {
+        color: $accent-color;
+        border-color: $accent-color;
+    }
+}
