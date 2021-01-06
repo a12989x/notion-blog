@@ -28,4 +28,9 @@ body {
         margin: 0 auto;
         padding: 0 1rem;
     }
+
+    img,
+    pre {
+        border-radius: 0.5rem !important;
+    }
 }
