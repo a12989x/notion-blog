@@ -7,7 +7,7 @@ import { getPublishedPosts, getPost } from '../../lib/api';
 import 'react-notion/src/styles.css';
 import 'prismjs/themes/prism-tomorrow.css';
 
-const { BASE_URL } = process.env;
+import Back from '../../components/Back';
 
 export const getStaticPaths = async () => {
     const posts = await getPublishedPosts();
@@ -24,8 +24,8 @@ export const getStaticProps = async ({ params: { slug } }) => {
     const post = posts.find((t) => t.slug === slug);
     const content = await getPost(post.id);
 
-    const icon = Object.entries(content)[0][1].value.format.page_icon;
-    const cover = Object.entries(content)[0][1].value.format.page_cover;
+    const icon = Object.entries(content)[0][1].value.format?.page_icon;
+    const cover = Object.entries(content)[0][1].value.format?.page_cover;
     post.title = icon ? `${icon} ${post.title}` : post.title;
     post.cover = cover ? cover : null;
 
@@ -33,28 +33,9 @@ export const getStaticProps = async ({ params: { slug } }) => {
 };
 
 const Post = ({ post, content }) => {
-    console.log(post);
-
     return (
         <section className="post">
-            <Link href="/">
-                <a
-                    className={`post__back ${
-                        post.cover ? 'post__back-cover' : ''
-                    }`}
-                >
-                    <button>
-                        <Image
-                            src="/assets/back.svg"
-                            alt="back"
-                            height="100%"
-                            width="100%"
-                            layout="responsive"
-                        />{' '}
-                        Go Back
-                    </button>
-                </a>
-            </Link>
+            <Back cover={post.cover} />
             {post.cover ? (
                 <Image
                     src={post.cover}
