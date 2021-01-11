@@ -15,4 +15,23 @@
         grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
     }
+
+    &__more {
+        grid-column: 1 / -1;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 250px;
+
+        button {
+            width: 100%;
+            color: $black-color;
+        }
+
+        &:hover {
+            button {
+                color: $white-color;
+                background-color: rgba($color: $accent-color, $alpha: 0.7);
+            }
+        }
+    }
 }
