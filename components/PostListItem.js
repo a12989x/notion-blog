@@ -1,8 +1,6 @@
 import Link from 'next/link';
 
-const PostListItem = ({ slug, icon, title, description, date, firstPost }) => {
-    console.log(Object.entries(firstPost));
-
+const PostListItem = ({ slug, icon, title, description, date }) => {
     return (
         <Link href={`/post/${slug}`}>
             <a className="postListItem">
