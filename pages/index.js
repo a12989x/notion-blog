@@ -1,13 +1,14 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import AboutMe from '../components/AboutMe';
 import PostListItem from '../components/PostListItem';
 
-import { getPublishedPosts, getFirstPost } from '../lib/api';
+import { orderPosts, getPublishedPosts, getFirstPost } from '../lib/api';
 
 export const getStaticProps = async () => {
     const publishedPosts = await getPublishedPosts();
-    const publishedPostsOrder = publishedPosts.reverse();
+    const publishedPostsOrder = await orderPosts(publishedPosts);
 
     const firstPost = await getFirstPost(publishedPostsOrder);
 
@@ -15,30 +16,36 @@ export const getStaticProps = async () => {
 };
 
 const Home = ({ posts, firstPost }) => {
-    console.log(firstPost);
+    const firstPosts = posts.slice(0, 5);
 
     return (
         <section className="home">
             <AboutMe />
             <hr className="home__hr" />
             <section className="home__posts">
-                {posts.map((post) => (
+                {firstPosts.map((post) => (
                     <PostListItem
                         key={post.id}
                         {...post}
                         description={
                             Object.entries(firstPost)[0][0] === post.id
-                                ? Object.entries(firstPost)[2][1].value
+                                ? Object.entries(firstPost)[2][1]?.value
                                       .properties.title[0][0]
                                 : null
                         }
-                        firstPost={firstPost}
                     />
                 ))}
+
+                {posts.length > 5 && (
+                    <Link href="/posts/1">
+                        <a className="home__more">
+                            <button>See more</button>
+                        </a>
+                    </Link>
+                )}
             </section>
         </section>
     );
 };
 
 export default Home;
-// @import './pages/post';
