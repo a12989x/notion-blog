@@ -34,7 +34,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
 const Post = ({ post, content }) => {
     return (
         <section className="post">
-            <Back cover={post.cover} />
+            <Back cover={post.cover ? post.cover : null} />
             {post.cover ? (
                 <Image
                     src={post.cover}
