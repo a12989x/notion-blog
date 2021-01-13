@@ -12,8 +12,6 @@ const RouterContextProvider = ({ children }) => {
         if (router.pathname === '/' || router.pathname === '/posts/[page]')
             setPrevPath(router.asPath);
         else setPrevPath('/');
-
-        console.log(router.query.page);
     }, [router.pathname]);
 
     return (
