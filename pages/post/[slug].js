@@ -1,6 +1,8 @@
 import Image from 'next/image';
+import { useContext } from 'react';
 import { NotionRenderer } from 'react-notion';
 
+import { RouterContext } from '../../context/RouterContext';
 import { getPublishedPosts, getPost } from '../../lib/api';
 
 import 'react-notion/src/styles.css';
@@ -32,6 +34,10 @@ export const getStaticProps = async ({ params: { slug } }) => {
 };
 
 const Post = ({ post, content }) => {
+    const { router } = useContext(RouterContext);
+
+    if (router.isFallback) return <h1>Loading...</h1>;
+
     return (
         <section className="post">
             <Back cover={post.cover ? post.cover : null} />

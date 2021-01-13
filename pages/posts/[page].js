@@ -18,9 +18,10 @@ export const getStaticPaths = async () => {
     const pagePosts = await getPostsForPage(5, postsOrderer, 5);
 
     return {
-        paths: pagePosts.map((post, index) => ({
-            params: { page: toString(++index) },
-        })),
+        paths: [],
+        // paths: pagePosts.map((post, index) => ({
+        //     params: { page: toString(++index) },
+        // })),
         fallback: true,
     };
 };
@@ -45,6 +46,8 @@ export const getStaticProps = async ({ params: { page } }) => {
 
 const Posts = ({ posts, firstPost, pagesNumber }) => {
     const { router } = useContext(RouterContext);
+
+    if (router.isFallback) return <h1>Loading...</h1>;
 
     return (
         <main className="posts">
