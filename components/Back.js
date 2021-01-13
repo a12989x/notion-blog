@@ -1,9 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useContext } from 'react';
+
+import { RouterContext } from '../context/RouterContext';
 
 const Back = ({ cover = null }) => {
+    const { prevPath } = useContext(RouterContext);
+
     return (
-        <Link href="/">
+        <Link href={prevPath}>
             <a className={`post__back ${cover ? 'post__back-cover' : ''}`}>
                 <button>
                     <Image
