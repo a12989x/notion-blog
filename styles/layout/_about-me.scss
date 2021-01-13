@@ -6,6 +6,10 @@
     gap: 1rem;
 
     @include media('<=650px') {
+        margin-top: 0;
+    }
+
+    @include media('<=650px') {
         grid-template: auto / auto;
     }
 
@@ -58,15 +62,12 @@
         @include media('<=650px') {
             grid-column: auto;
             grid-row: 1 / 2;
-            max-width: 200px;
+            max-width: 150px;
         }
     }
 
     &__img {
         object-fit: cover;
         border-radius: 0.5rem;
-
-        @include media('<=650px') {
-        }
     }
 }
