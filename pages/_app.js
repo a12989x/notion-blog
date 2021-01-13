@@ -1,11 +1,14 @@
 import Layout from '../components/Layout';
+import RouterContextProvider from '../context/RouterContext';
 
 import '../styles/main.scss';
 
 const MyApp = ({ Component, pageProps }) => {
     return (
         <Layout>
-            <Component {...pageProps} />
+            <RouterContextProvider>
+                <Component {...pageProps} />
+            </RouterContextProvider>
         </Layout>
     );
 };
