@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+
+import { orderPosts, getPublishedPosts, getFirstPost } from '../lib/api';
 
 import AboutMe from '../components/AboutMe';
 import PostListItem from '../components/PostListItem';
-
-import { orderPosts, getPublishedPosts, getFirstPost } from '../lib/api';
 
 export const getStaticProps = async () => {
     const publishedPosts = await getPublishedPosts();
