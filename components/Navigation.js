@@ -10,8 +10,6 @@ const Navigation = () => {
         router: { asPath },
     } = useContext(RouterContext);
 
-    console.log(asPath);
-
     return (
         <motion.header
             className="navigation"
