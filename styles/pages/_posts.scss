@@ -1,8 +1,10 @@
 .posts {
     margin: 2rem auto;
     max-width: 750px;
+    min-height: 75vh;
     display: grid;
     grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
+    align-content: start;
     gap: 2rem;
 
     &__pagesNumber {
