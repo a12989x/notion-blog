@@ -22,6 +22,29 @@ body {
     a {
         text-decoration: none;
         color: $accent-color;
+        position: relative;
+        cursor: pointer;
+
+        &.link {
+            &::after {
+                content: '';
+                height: 1px;
+                width: 0;
+                margin: 0;
+                background-color: $accent-color;
+                display: block;
+                position: absolute;
+                right: 0;
+                transition: 0.4s ease;
+            }
+
+            &:hover {
+                &::after {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
     }
 
     #__next {
