@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useContext } from 'react';
 import { NotionRenderer } from 'react-notion';
+import { motion } from 'framer-motion';
 
 import { RouterContext } from '../../context/RouterContext';
 import { getPublishedPosts, getPost } from '../../lib/api';
@@ -9,6 +10,7 @@ import 'react-notion/src/styles.css';
 import 'prismjs/themes/prism-tomorrow.css';
 
 import Back from '../../components/Back';
+import { fadeInUp } from '../../lib/animations';
 
 export const getStaticPaths = async () => {
     const posts = await getPublishedPosts();
@@ -39,7 +41,13 @@ const Post = ({ post, content }) => {
     if (router.isFallback) return <h1>Loading...</h1>;
 
     return (
-        <section className="post">
+        <motion.section
+            className="post"
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
+            exit={{ opacity: 0 }}
+        >
             <Back cover={post.cover ? post.cover : null} />
             {post.cover ? (
                 <Image
@@ -57,7 +65,7 @@ const Post = ({ post, content }) => {
                 <small className="post__date">published on {post.date}</small>
                 <NotionRenderer blockMap={content} />
             </div>
-        </section>
+        </motion.section>
     );
 };
 
