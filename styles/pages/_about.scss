@@ -1,0 +1,29 @@
+.about {
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 0 0 2.5rem;
+    min-height: 80vh;
+
+    &__header {
+        margin-bottom: 0.3rem;
+
+        &:first-child {
+            margin-top: 0;
+            color: $black-color;
+        }
+    }
+
+    &__paragraph {
+        margin: 0;
+        line-height: 1.5;
+        font-size: 1.1rem;
+    }
+
+    &__skills {
+        padding-left: 1.5rem;
+        list-style: disc;
+        display: grid;
+        grid-auto-flow: row;
+        row-gap: 0.4rem;
+    }
+}
