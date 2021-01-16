@@ -1,18 +1,16 @@
 import { useState, useEffect, createContext } from 'react';
 import { useRouter } from 'next/router';
 
-//Context
 export const RouterContext = createContext();
 
 const RouterContextProvider = ({ children }) => {
     const router = useRouter();
-    const [prevPath, setPrevPath] = useState(router.asPath);
+    const [prevPath, setPrevPath] = useState('/');
 
     useEffect(() => {
         if (router.pathname === '/' || router.pathname === '/posts/[page]')
             setPrevPath(router.asPath);
-        else setPrevPath('/');
-    }, [router.pathname]);
+    }, [router.asPath]);
 
     return (
         <RouterContext.Provider value={{ prevPath, router }}>
