@@ -1,0 +1,22 @@
+.footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+
+    .link {
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: 0.3rem;
+        color: $gray-color;
+
+        &::after {
+            bottom: -5px;
+            background-color: #777c90;
+        }
+    }
+}
