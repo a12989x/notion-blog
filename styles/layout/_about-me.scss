@@ -31,29 +31,6 @@
         }
     }
 
-    &__link {
-        position: relative;
-
-        &::after {
-            content: '';
-            height: 1px;
-            width: 0;
-            margin-top: 5px;
-            background-color: $accent-color;
-            display: block;
-            position: absolute;
-            right: 0;
-            transition: 0.4s ease;
-        }
-
-        &:hover {
-            &::after {
-                width: 100%;
-                left: 0;
-            }
-        }
-    }
-
     > div {
         margin: 0 auto;
         grid-column: 2 / 3;
@@ -69,5 +46,12 @@
     &__img {
         object-fit: cover;
         border-radius: 0.5rem;
+    }
+
+    &__contact {
+        button {
+            background-color: $accent-color;
+            margin-top: 1rem;
+        }
     }
 }
