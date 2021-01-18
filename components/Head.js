@@ -1,11 +1,14 @@
 import NextHead from 'next/head';
 
-const Head = ({ description }) => {
+const Head = () => {
     return (
         <NextHead>
             <meta charSet="UTF-8" />
-            <title>My Blog | Codax</title>
-            <meta name="description" content={description || ''} />
+            <title>Mi Blog | Codax</title>
+            <meta
+                name="description"
+                content="Amas el desarrollo web? Conoce los principles temas relacionados y tips que te ayudaran a ser un mejor desarrollador web."
+            />
             <meta
                 name="viewport"
                 content="width=device-width, initial-scale=1"

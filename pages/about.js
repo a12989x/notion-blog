@@ -11,16 +11,16 @@ const About = () => {
             animate="animate"
             exit={{ opacity: 0 }}
         >
-            <h1 className="about__header">About</h1>
+            <h1 className="about__header">Acerca de</h1>
             <p className="about__paragraph">
-                I'm a 19-year old freelance frontend developer living in CDMX,
-                Mexico. Most of the time i build pages with react framework.
-                Over the past year, I've been learning in Bottega and building
-                websites.
+                Soy un freelance de 19 años frontend developer viviendo en CDMX,
+                Mexico. La mayoría de las veces construyo páginas con react como
+                framework. Durante el año pasado, He estado aprendiendo en
+                bottega y construyendo sitios web.
                 <br />
                 <br />
-                This website was build with Nextjs for the frontend and Notion
-                as CMS for posts.
+                Este sitio web fue construido con Nextjs para el frontend y
+                Notion como CMS para las publicaciones y proyectos.
             </p>
 
             <h2 className="about__header">Skills :</h2>
@@ -32,26 +32,25 @@ const About = () => {
                 <li>Node JS</li>
             </ul>
 
-            <h2 className="about__header">YouTube Channel</h2>
+            <h2 className="about__header">Canal de YouTube</h2>
             <p className="about__paragraph">
                 I have a{' '}
                 <Link href="https://www.youtube.com/channel/UCMY0GhV1HuX4XdbgalC77VQ">
-                    <a className="link">YouTube chanel</a>
+                    <a className="link">Canal de YouTube</a>
                 </Link>
-                , where I sometimes post videos about topics that I find
-                interesting.
+                , donde a veces publico videos sobre los temas que publico aqui.
             </p>
 
-            <h2 className="about__header">What is Codax</h2>
+            <h2 className="about__header">Que es Codax</h2>
             <p className="about__paragraph">
-                It doesn't mean anything. But I like it, it's like my nickname.
+                No significa nada. Pero me gusta, es como mi nickname.
             </p>
 
             <h2 id="#contact" className="about__header">
-                Getting in touch
+                Estemos en contacto
             </h2>
             <p className="about__paragraph">
-                You can email me at{' '}
+                Puedes enviarme un correo electrónico a{' '}
                 <Link href="mailto:alexis12989x@gmail.com">
                     <a className="link">alexis12989x@gmail.com</a>
                 </Link>

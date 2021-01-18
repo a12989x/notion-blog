@@ -39,7 +39,7 @@ const Navigation = () => {
                                     : ''
                             } link`}
                         >
-                            About
+                            Acerca de
                         </a>
                     </Link>
                 </li>
@@ -52,7 +52,7 @@ const Navigation = () => {
                                     : ''
                             } link`}
                         >
-                            Projects
+                            Projectos
                         </a>
                     </Link>
                 </li>

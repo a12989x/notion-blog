@@ -51,7 +51,7 @@ const Home = ({ posts, firstPost }) => {
                 {posts.length > 5 && (
                     <Link href="/posts/1">
                         <a className="home__more">
-                            <button>See more</button>
+                            <button>Ver más</button>
                         </a>
                     </Link>
                 )}

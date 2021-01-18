@@ -18,7 +18,7 @@ const Back = ({ cover = null }) => {
                         width="100%"
                         layout="responsive"
                     />{' '}
-                    Go Back
+                    Atras
                 </button>
             </a>
         </Link>

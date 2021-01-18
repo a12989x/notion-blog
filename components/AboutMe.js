@@ -5,21 +5,22 @@ import { motion } from 'framer-motion';
 const AboutMe = () => {
     return (
         <section className="aboutMe">
-            <h1 className="aboutMe__title">Hi, I'm Alexis Guzman</h1>
+            <h1 className="aboutMe__title">Hola, Soy Alexis Guzman</h1>
             <p className="aboutMe__description">
-                I'm a student frontend developer, I build some pages such as{' '}
-                <a className="link" href="#" target="_blank">
+                Soy un apasionado de desarrollo web frontend. Eh construido
+                algunas paginas como{' '}
+                <a className="link" href="#" rel="noreferrer" target="_blank">
                     Covid Tracker
                 </a>{' '}
-                and{' '}
-                <a className="link" href="#" target="_blank">
+                y{' '}
+                <a className="link" href="#" rel="noreferrer" target="_blank">
                     Superchat
                 </a>
                 .
                 <br />
                 <Link href="/about/#contact">
                     <a className="aboutMe__contact">
-                        <button>Contact Me!</button>
+                        <button>Contáctame!</button>
                     </a>
                 </Link>
             </p>
