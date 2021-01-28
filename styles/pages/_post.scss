@@ -1,5 +1,6 @@
 .post {
     margin: 0 auto;
+    padding-bottom: 1rem;
     max-width: 1000px;
     position: relative;
     min-height: 80vh;
@@ -18,9 +19,14 @@
             position: absolute;
             top: 1rem;
             left: 0;
+
+            button {
+                background-color: $gray-color;
+            }
         }
 
         button {
+            background-color: $black-color;
             backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
