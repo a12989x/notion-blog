@@ -42,27 +42,27 @@ const Post = ({ post, content }) => {
 
     return (
         <motion.section
-            className="post"
+            className='post'
             variants={fadeInUp}
-            initial="initial"
-            animate="animate"
+            initial='initial'
+            animate='animate'
             exit={{ opacity: 0 }}
         >
             <Back cover={post.cover ? post.cover : null} />
             {post.cover ? (
                 <Image
                     src={post.cover}
-                    width="800"
-                    height="300"
-                    layout="responsive"
+                    width='800'
+                    height='300'
+                    layout='responsive'
                 />
             ) : null}
-            <div className="post__container">
-                <h1 className="post__title">{post.title}</h1>
-                <small className="post__author">
+            <div className='post__container'>
+                <h1 className='post__title'>{post.title}</h1>
+                <small className='post__author'>
                     by {post.authors[0].fullName}
                 </small>
-                <small className="post__date">published on {post.date}</small>
+                <small className='post__date'>published on {post.date}</small>
                 <NotionRenderer blockMap={content} />
             </div>
         </motion.section>
