@@ -9,14 +9,14 @@ const Back = ({ cover = null }) => {
 
     return (
         <Link href={prevPath}>
-            <a className={`post__back ${cover ? 'post__back-cover' : ''}`}>
+            <a className={`post__back${cover ? ' post__back-cover' : ''}`}>
                 <button>
                     <Image
-                        src="/assets/back.svg"
-                        alt="back"
-                        height="100%"
-                        width="100%"
-                        layout="responsive"
+                        src='/assets/back.svg'
+                        alt='back'
+                        height='100%'
+                        width='100%'
+                        layout='responsive'
                     />{' '}
                     Atras
                 </button>
